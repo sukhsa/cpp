@@ -1,0 +1,283 @@
+//Q.1 Write a C++ program that takes an integer as input and uses an `if-else` statement to determine whether the number is even or odd.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int number;
+    cout<<"enter the value of number\n";
+    cin>>number;
+    if(number%2==0){
+     cout<<"the number is even";
+    }
+     else{
+         cout<<"the number is odd";
+     }
+
+    return 0;
+}
+..................................................................................................................................................
+//Q.2 Create a program that takes a student's percentage as input and outputs their corresponding grade (A, B, C, etc.) using `if-else` statements.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double percentage;
+    cout<<"enter the value of percentage\n";
+    cin>>percentage;
+    if(percentage>=90){
+        cout<<"THE GRADE IS A";
+    }
+    else if(percentage>=80){
+        cout<<"THE GRADE IS B";
+    }
+    else if(percentage>=70){
+        cout<<"THE GRADE IS C";
+    }
+    else if(percentage>=60){
+        cout<<"THE GRADE IS D";
+    }
+    else{
+        cout<<"THE STUDENT IS FAIL";
+        
+    }
+    
+    return 0;
+}
+................................................................................................................................................
+//Q.3 Write a program that checks if a given year is a leap year or not. Use an `if-else` statement and logical operators to make the determination.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int year;
+    cout<<"enter the value of year\n";
+    cin>>year;
+    if((year % 4 == 0 ) || (year % 400 == 0)) {
+
+       cout<<"THIS YEAR IS A LEAP YEAR"; 
+    }
+    else{
+        cout<<"THIS YEAR IS NOT A LEAP YEAR";
+    }
+    
+    return 0;
+}
+................................................................................................................................................
+//Q.4 Develop a program that takes three angles as input and determines whether the triangle is acute,obtuse, or right-angled using `if-else` statements.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double angle1, angle2, angle3;
+    cout<<"enter the value of angle1\n";
+    cin>>angle1;
+    cout<<"enter the value of angle2\n";
+    cin>>angle2;
+    cout<<"enter the value of angle3\n";
+    cin>>angle3;
+    if (angle1 + angle2 + angle3 == 180) {
+       
+        if (angle1 == 90 || angle2 == 90 || angle3 == 90) 
+        {
+           cout << "The triangle is a right-angled triangle.";
+        } 
+        else if (angle1 < 90 && angle2 < 90 && angle3 < 90)
+        {
+            cout << "The triangle is an acute-angled triangle." ;
+        } 
+        else
+        {
+            cout << "The triangle is an obtuse-angled triangle.";
+        }
+        }else {
+        cout << "Invalid input! The angles do not form a valid triangle.";
+        }
+
+    return 0;
+}
+..............................................................................................................................................
+//Q.5 Create a C++ program that takes an integer as input and prints whether it is positive, negative, or zero using `if-else` statements.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int number;
+    cout<<"enter the value of number\n";
+    cin>>number;
+    if (number>0)
+    {
+        cout<<"the number is positive";
+    }
+    else if(number<0)
+    {
+        cout<<"the number is negative";
+    }
+    else
+    {
+        cout<<"the number is zero";
+    }
+    return 0;
+}
+................................................................................................................................................
+//Q.6 Implement a basic login system where the user enters a username and password. Use `if-else`statements to validate the login credentials.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string valid_username="sukhveer", valid_password="sukhsa123";
+    string entered_username,entered_password;
+    cout<<"enter your username\n";
+    cin>>entered_username;
+    cout<<"enter your password\n";
+    cin>>entered_password;
+    if (entered_username==valid_username && entered_password==valid_password)
+    {
+        cout<<"login successfull";
+    }
+    else{
+        cout<<"inocorrect the login credentials please try again";
+    }
+    return 0;
+}
+................................................................................................................................................
+//Q.7 Write a program that simulates a traffic light. The program should take user input for the current signal and output the next signal using `if-else` statements.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   string signals[] = {"Red", "Yellow", "Green"};
+
+   string current_signal;
+   cout<<"enter the current light signal(red, yellow, green)\n";
+   cin>>current_signal;
+   if(current_signal=="Red")
+   {
+       cout<<"next signal is Yellow";
+   }
+   else if(current_signal=="Yellow")
+   {
+       cout<<"next signal is green";
+   }
+   else if(current_signal=="Green")
+   {
+       cout<<"next signal is yellow";
+   }
+   else{
+       cout<<"invalid input. please enter the correct signals";
+   }
+    return 0;
+}
+................................................................................................................................................
+//Q.8 Create a program that checks if a given number is divisible by both 5 and 7. Use logical operators within an `if` statement for the check.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int number;
+   cout<<"PLEASE ENTER THE INTEZER\n";
+   cin>>number;
+   if((number%5==0)&&(number%7==0))
+   {
+       cout<<"THIS NUMBER IS DIVISABLE BY 5 AND 7";
+   }
+   else{
+       cout<<"THIS NUMBER IS NOT DIVISABLE BY 5 AND 7";
+   }
+    return 0;
+}
+................................................................................................................................................
+//Q.10 Write a C++ program that takes three numbers as input and outputs the largest one using `if-else` statements and relational operators.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    double num1, num2, num3;
+    cout<<"enter the value of number 1 ";
+    cin>>num1;
+    cout<<"enter the value of number2 ";
+    cin>>num2;
+    cout<<"enter the value of number3 ";
+    cin>>num3;
+    if(num1>=num2 && num1>=num3)
+    {
+        cout<<"the largest number is "<<num1;
+        
+    }
+    else if(num2>=num1 && num2>=num3)
+    {
+        cout<<"the largest number is " <<num2;
+    }
+    else{
+        cout<<"the largest number is " <<num3;
+    }
+
+    return 0;
+}
+
+................................................................................................................................................
+//Q.11 Create a program that takes a character as input and determines whether it is a vowel or consonant using `if-else` statements.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    char ch;
+    cout<<"enter a character ";
+    cin>>ch;
+     if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
+     {
+           cout<< "this character is a vowel."; 
+     }
+     else{
+         cout<<"this character is consonant";
+     }
+    return 0;
+}
+................................................................................................................................................
+//Q.12 Write a program that classifies a person into different age groups (child, teenager, adult, senior) based on their age using `if-else` statements.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int age;
+   cout<<"enter the persons age ";
+   cin>>age;
+   if(age>=0 && age<=12)
+   {
+       cout<<"this person is a childern";
+   }
+   else if(age>=13 && age<=19)
+   {
+      cout<<"this perosn is a teenager";
+   }
+   else if (age>=20 && age<=64)
+   {
+       cout<<"this perosn is adult";
+   }
+   else if (age>=65)
+   {
+       cout<<"this perosn is senior";
+       
+   }
+   else{
+       cout<<" invalid age. please enter the correct age";
+   }
+    return 0;
+}
+................................................................................................................................................
