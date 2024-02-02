@@ -281,3 +281,97 @@ int main()
     return 0;
 }
 ................................................................................................................................................
+//Q.36 Develop a program that checks the availability of a product in a store. If the product is in stock(greater than 1) and the user has a valid membership, they can purchase it; otherwise, display a  message.
+ #include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+       try {
+           int stocks=1,stck;
+          int membership_code=27,mbm;
+       cout<<"Enter the number of stocks you want to purchase and your membership code\n";
+       cin>>stck>>mbm;
+       if(stck>stocks)
+       {
+           throw runtime_error("Bhai stock se zada mang raha hai\n");
+       }
+       else if(mbm!=membership_code)
+       {
+           throw runtime_error("Tu kon hai?\n");
+       }
+       else if(stocks<=1)
+       {
+           throw invalid_argument("Bhai stock khatam ho gaya hai\n");
+       }
+       else if( (mbm==membership_code) && stocks>1 )
+       {
+           cout<<"Stock purchased "<<stck<<"\n";
+           stocks=stocks-stck;
+           cout<<"Itni hi stocks bachi hai: "<<stocks;
+       }
+       else
+       {
+         throw runtime_error("Please bhai aaj maaf kar de kal aaana\n");
+       }
+   }
+   catch(const exception& e) {
+        cerr << "Error: " << e.what() << endl;
+    }
+
+    return 0;
+}
+...............................................................................................................................................
+//Q.38 Create a basic ATM system where the user can withdraw money. Use if-else statements to check the account balance and handle withdrawal limits.
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    try {
+        int withdraw, acc = 200;
+        cout << "Enter the amount you want to withdraw\n";
+        cin >> withdraw;
+
+        if (withdraw > acc) {
+            throw runtime_error("Insufficient Balance");
+        } else if (acc < 500) {
+            throw runtime_error("Insufficient Balance (Account Balance is less than 500)");
+        } else if ((withdraw % 500) != 0) {
+            throw invalid_argument("Not in multiple of 5");
+        } else {
+            acc = acc - withdraw;
+            cout << "Withdraw amount: " << withdraw << "\n";
+            cout << "Account Balance left: " << acc;
+        }
+    }
+    catch (const exception& e) {
+        cerr << "Error: " << e.what() << endl;
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.40 Implement a program that takes a day of the week (Monday, Tuesday, etc.) as input and prints whether it's a weekday or a weekend day using if-else statements.
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string dow;
+    cout<<"Enter the Day of the week\n";
+    cin>>dow;
+     // Convert the string to lowercase
+    for (char &c : dow) {
+        c = std::tolower(c);
+    }
+    if(dow=="monday"|| dow=="tuesday"|| dow=="wednessday" || dow=="thrusday" || dow=="friday")
+    {
+        cout<<"Weekday";
+    }
+    else if(dow=="saturday" || dow=="sunday")
+    {
+        cout<<"Weekend";
+    }
+    else
+    {
+        cout<<"Please enter correct day of the week";
+    }
+}
