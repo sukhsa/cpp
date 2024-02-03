@@ -15,7 +15,7 @@ int main()
         cout << year << " is not a leap year." << endl;
     }
 
-..........................................................................................................
+...............................................................................................................................................
 //Q.2 Create a C++ program that takes an integer as input and prints whether it is positive, negative, or zero using `if-else` statements.
 
 #include <bits/stdc++.h>
@@ -38,7 +38,7 @@ int main() {
 
     return 0;
 }
-..........................................................................................................
+...............................................................................................................................................
 //Q.3 Write a program that takes the current time as input and prints a message based on whether it&#39;s morning, afternoon, evening, or night.
 
 #include <bits/stdc++.h>
@@ -63,7 +63,7 @@ int main() {
 
     return 0;
 }
-..........................................................................................................
+................................................................................................................................................
 //Q.4 Develop a program that checks the availability of a product in a store. If the product is instock(greater than 1) and the user has a valid membership, they can purchase it; otherwise,display an &quot;Out of stock&quot; message.
 #include<bits/stdc++.h>
 using namespace std;
@@ -103,7 +103,8 @@ int main() {
 
     return 0;
 }
-.........................................................................................................
+................................................................................................................................................
+
 //Q.5 Create a basic ATM system where the user can withdraw money. Use if-else statements to check the account balance and handle withdrawal limits.
 #include<bits/stdc++.h>
 using namespace std;
@@ -132,4 +133,4 @@ int main() {
 
     return 0;
 }
-..........................................................................................................
+...............................................................................................................................................
