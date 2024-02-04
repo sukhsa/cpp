@@ -281,6 +281,82 @@ int main()
     return 0;
 }
 ................................................................................................................................................
+//Q.15 Create a program that calculates the Body Mass Index (BMI) based on user input for height andweight. Classify the BMI into different categories (underweight, normal, overweight) using `if-else`statements.
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    float height, weight,bmi;
+    cout<<"enter your height in cm \n";
+    cin>>height;
+    cout<<"enter your weight in kg \n";
+    cin>>weight;
+    bmi=weight / (height * height);
+    cout<<"bmi is "<< bmi ;
+    if(bmi<18.5)
+    {
+            cout<<"you are in underweight";
+    }
+    else if(bmi<24.9)
+    {
+        cout<<"your are in normalweigth";
+    }
+    else if(bmi<29.9)
+    {
+        cout<<"you are in overweight";
+    }
+    else{
+        cout<<"you are a obese";
+        
+    }
+    return 0;
+}
+................................................................................................................................................
+//Q.26 Write a program that takes the current time as input and prints a message based on whether it's morning, afternoon, evening, or night.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Get the current time point in UTC
+    auto currentTimePoint = chrono::system_clock::now();
+
+    // Get the time zone offset for IST (Indian Standard Time)
+    constexpr int istOffsetHours = 5;
+    constexpr int istOffsetMinutes = 30;
+
+    // Adjust the current time point for IST
+    currentTimePoint += chrono::hours(istOffsetHours) + chrono::minutes(istOffsetMinutes);
+
+    // Convert the time point to a time_t object
+    time_t currentTime = chrono::system_clock::to_time_t(currentTimePoint);
+
+    // Convert the time_t object to a tm structure
+    tm* localTime = std::localtime(&currentTime);
+
+    // Extract the hour part
+    int hour = localTime->tm_hour;
+
+   
+    if(hour>=6 && hour<12)
+    {
+        cout<<"Morning";
+    }
+    else if(hour>=12 && hour<18)
+    {
+        cout<<"After Noon";
+    }
+    else if(hour>=18 && hour<21)
+    {
+        cout<<"Evening";
+    }
+    else if( (hour>=21 && hour<24) || (hour>=0  && hour<6) )
+    {
+        cout<<"Night";
+    }
+
+    return 0;
+}
+...............................................................................................................................................
 //Q.36 Develop a program that checks the availability of a product in a store. If the product is in stock(greater than 1) and the user has a valid membership, they can purchase it; otherwise, display a  message.
  #include<bits/stdc++.h>
 using namespace std;
