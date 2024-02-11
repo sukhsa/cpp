@@ -1,0 +1,58 @@
+//Q.1 write a for loop that prints number from 1 to 10.
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i;
+    for(i=1;i<=10;i++)
+    cout<<i;
+    return 0;
+}
+................................................................................................................................................
+//Q.2 create a for loop that count down from 10 to 1 and print each number.
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i;
+    for(i=10;i>=1;i--)
+    cout<<i;
+    return 0;
+}
+...............................................................................................................................................
+//Q.3 write a for loop to print even number from 2 to 20.
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i;
+    for(i=2;i<=20;i+=2)
+    cout<<i <<" ";
+    return 0;
+}
+................................................................................................................................................
+//Q.4 create a for loop to print the first 5 multiple of 3.
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i,n;
+    cout<<"enter the value of n whose multiplication you want to print\n";
+    cin>>n;
+    for(i=1;i<=3;i++)
+    cout<<n<<"x"<<i <<"="<<n*i<<"\n";
+    return 0;
+}
+................................................................................................................................................
+//Q.5 write a for loop to calculate the sum of number 1 to 10.
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i,sum;
+    for(i=1;i<=10;i++)
+     sum=sum+i;
+    cout<<"the sum of 1 to 10 number is " <<sum;
+    return 0;
+}
+................................................................................................................................................
