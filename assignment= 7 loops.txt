@@ -56,3 +56,572 @@ int main()
     return 0;
 }
 ................................................................................................................................................
+//Q.6 Create a for loop that prints the square of numbers from 1 to 5.
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+     
+     int i,square;
+    for (int i = 1; i <= 5;i++) 
+    {
+        square = i * i;
+        cout << "Square of " << i << " is: " << square <<"\n";
+    }
+    return 0;
+}
+................................................................................................................................................
+//Q.11 write a for loop to find the factorial of a given number. 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+     int number;
+    unsigned long long factorial = 1;
+    cout << "Enter a number: ";
+    cin >> number;
+     if (number < 0)
+     {
+         cout << "Factorial is not defined for negative numbers.\n";
+    } 
+    else {
+        for (int i = 1; i <= number; i++) 
+        {
+            factorial *= i;
+        }
+           cout << "Factorial of " << number << " is: " << factorial <<endl;
+    }
+    
+    return 0;
+}
+................................................................................................................................................
+//Q.12 Create a for loop to print the Fibonacci series up to 10 terms.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n = 10;
+    int prev = 0, curr = 1;
+
+    cout << "Fibonacci series up to " << n << " terms:\n";
+    for (int i = 0; i < n; i++) 
+    {
+          cout << prev << " ";
+          int next = prev + curr;
+          prev = curr;
+          curr = next;
+          
+    }
+        
+   
+
+    return 0;
+}
+................................................................................................................................................
+//Q.13 Write a for loop to check if a number is prime or not.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int number;
+    bool isPrime = true;
+
+       cout << "Enter a positive integer: ";
+       cin >> number;
+
+    if (number <= 1)
+    {
+        isPrime = false;
+    } else {
+        for (int i = 2; i <= number / 2; i++) {
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if (isPrime)
+           cout << number << " is a prime number.\n";
+    else
+           cout << number << " is not a prime number.\n";
+
+    return 0;
+}
+................................................................................................................................................
+//Q.14 Create a for loop to print a multiplication table of a given number up to 10.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+   int number;
+
+      cout << "Enter a number: ";
+      cin >> number;
+
+      cout << "Multiplication table of " << number << ":\n";
+       for (int i = 1; i <= 10; i++)
+       {
+           cout << number << " * " << i << " = " << number * i <<endl;
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.16 Create a for loop to find the sum of digits of a given number.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+   int number;
+    int sum = 0;
+    cout << "Enter a number: ";
+    cin >> number;
+    int originalNumber = number;
+    while (number != 0) {
+        int digit = number % 10;
+        sum += digit;
+        number /= 10;
+    }
+
+      cout << "The sum of digits of " << originalNumber << " is: " << sum <<endl;
+
+    return 0;
+}
+................................................................................................................................................
+//Q.19 Write a for loop to find the GCD (Greatest Common Divisor) of two numbers.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int num1, num2;
+    int gcd = 1;
+
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+
+    int minNumber = (num1 < num2) ? num1 : num2;
+
+    
+    for (int i = 1; i <= minNumber; i++) 
+    {
+        if (num1 % i == 0 && num2 % i == 0) 
+        {
+            gcd = i;
+        }
+    }
+
+    cout << "The GCD of " << num1 << " and " << num2 << " is: " << gcd <<"\n";
+
+    return 0;
+}
+................................................................................................................................................
+//Q.20 Create a for loop to find the LCM (Least Common Multiple) of two numbers.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int num1, num2;
+    int lcm;
+
+       cout << "Enter two numbers: ";
+       cin >> num1 >> num2;
+
+    int maxNumber = (num1 > num2) ? num1 : num2;
+
+   
+    for (lcm = maxNumber; ; lcm += maxNumber) 
+    {
+        if (lcm % num1 == 0 && lcm % num2 == 0)
+        {
+            break;
+        }
+    }
+
+     cout << "The LCM of " << num1 << " and " << num2 << " is: " << lcm << "\n";
+
+    return 0;
+}
+................................................................................................................................................//Q.23 Write a for loop to print the first 10 terms of the geometric series with a common ratio of 2.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int terms = 10;
+    int common_ratio = 2;
+    int first_term = 1;
+
+       cout << "The first " << terms << " terms of the geometric series with a common ratio of "
+              << common_ratio << " are:\n";
+
+    for (int i = 0; i < terms; i++) {
+        int term_value = first_term * pow(common_ratio, i);
+           cout << term_value << " ";
+    }
+
+       cout <<"\n";
+
+    return 0;
+}
+................................................................................................................................................
+//Q.24 Create a for loop to print a pattern of stars in the shape of a right triangle.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+     int rows;
+
+    cout << "Enter the number of rows for the right triangle: ";
+    cin >> rows;
+
+    for (int i = 1; i <= rows; i++) 
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            std::cout << "* ";
+        }
+        std::cout <<endl;
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.25 Write a for loop to calculate the sum of the first 10 odd numbers.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int sum = 0;
+
+      cout << "Sum of the first 10 odd numbers:\n";
+
+    for (int i = 1, count = 0; count < 10; i++) {
+        if (i % 2 != 0) {
+            sum += i;
+            cout << i << " ";
+            count++;
+        }
+    }
+
+      cout << "\nSum: " << sum << std::endl;
+
+    return 0;
+}
+................................................................................................................................................
+//Q.26 Create a for loop to find the product of numbers from 1 to 5.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+      int product = 1;
+
+      cout << "Product of numbers from 1 to 5:\n";
+
+    for (int i = 1; i <= 5; ++i) 
+    {
+        product *= i;
+    }
+
+      cout << "Product: " << product <<"\n";
+
+    return 0;
+}
+................................................................................................................................................
+//Q.29 Write a for loop to print numbers from 1 to 100, but replace multiples of 3 with "Fizz" and multiples of 5 with "Buzz".
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+      cout << "Printing numbers from 1 to 100 with replacements:\n";
+
+    for (int i = 1; i <= 100; i++) 
+    {
+        if (i % 3 == 0 && i % 5 == 0)
+        {
+               cout << "FizzBuzz ";
+        } else if (i % 3 == 0)
+        {
+               cout << "Fizz ";
+        } else if (i % 5 == 0) {
+               cout << "Buzz ";
+        } else {
+            cout << i << " ";
+        }
+    }
+
+       cout << "\n";
+
+    return 0;
+}
+................................................................................................................................................
+//Q.32 Create a for loop to print a pattern of numbers in a pyramid shape.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+      int rows;
+
+      cout << "Enter the number of rows for the pyramid: ";
+     cin >> rows;
+
+    for (int i = 1; i <= rows; i++) 
+    {
+       
+        for (int j = 1; j <= rows - i; j++) 
+        {
+             cout << "  ";
+        }
+
+        for (int k = 1; k <= i; ++k) {
+              cout << k << " ";
+        }
+
+        for (int l = i - 1; l >= 1; l--) 
+        {
+            std::cout << l << " ";
+        }
+
+         cout <<"\n";
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.33 Write a for loop to reverse the digits of a given number.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+       int number, reversedNumber = 0;
+
+      cout << "Enter a number: ";
+      cin >> number;
+
+    int originalNumber = number;
+    int numDigits = 0;
+
+   
+    int temp = number;
+    while (temp != 0) {
+        temp /= 10;
+        ++numDigits;
+    }
+
+    
+    for (int i = 0; i < numDigits; i++) {
+        int digit = number % 10;
+        reversedNumber = reversedNumber * 10 + digit;
+        number /= 10;
+    }
+
+    cout << "Original number: " << originalNumber <<"\n";
+    cout << "Reversed number: " << reversedNumber <<"\n";
+
+    return 0;
+}
+................................................................................................................................................
+//Q.35 Write a for loop to check if a given number is an Armstrong number.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+       int number, originalNumber, remainder, result = 0, numDigits = 0;
+
+       cout << "Enter a number: ";
+       cin >> number;
+
+    originalNumber = number;
+
+    int temp = number;
+    while (temp != 0) {
+        temp /= 10;
+        ++numDigits;
+    }
+
+    while (originalNumber != 0) {
+        remainder = originalNumber % 10;
+        result += pow(remainder, numDigits);
+        originalNumber /= 10;
+    }
+
+    
+    if (result == number) {
+        cout << number << " is an Armstrong number.\n";
+    } else {
+        cout << number << " is not an Armstrong number.\n";
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.36 Create a for loop to print the pattern of a hollow square using asterisks.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+int rows;
+
+    cout << "Enter the number of rows for the hollow square: ";
+    cin >> rows;
+    for (int i = 1; i <= rows; i++) 
+    {
+        if (i == 1 || i == rows) 
+        {
+            for (int j = 1; j <= rows; j++) {
+                std::cout << "* ";
+            }
+        } else {
+            for (int j = 1; j <= rows; j++) {
+                if (j == 1 || j == rows) {
+                    cout << "* ";
+                } else {
+                     cout << "  ";
+                }
+            }
+        }
+        cout << std::endl;
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.37 Write a for loop to find the sum of digits of factorial of a given number.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+ int number;
+    cout << "Enter a number: ";
+    cin >> number;
+
+    
+    unsigned long long factorial = 1;
+    for (int i = 2; i <= number; i++) 
+   {
+        factorial *= i;
+    }
+
+    
+    int sum = 0;
+    unsigned long long temp = factorial;
+    while (temp != 0) {
+        sum += temp % 10;
+        temp /= 10;
+    }
+
+    cout << "Factorial of " << number << " is: " << factorial << "\n";
+    cout << "Sum of digits of the factorial: " << sum << "\n";
+
+    return 0;
+}
+................................................................................................................................................
+//Q.38 Create a for loop to print the pattern of a diamond using asterisks.
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+ int rows;
+
+    cout << "Enter the number of rows for the diamond: ";
+    cin >> rows;
+
+    for (int i = 1; i <= rows; i++)
+    {
+        for (int j = 1; j <= rows - i; j++) 
+        {
+             cout << " ";
+        }
+        for (int k = 1; k <= 2 * i - 1; k++) 
+        {
+             cout << "*";
+        }
+          cout <<"\n";
+    }
+    for (int i = rows - 1; i >= 1; i--)
+    {
+        for (int j = 1; j <= rows - i; ++j) {
+           cout << " ";
+        }
+        for (int k = 1; k <= 2 * i - 1; ++k) {
+            cout << "*";
+        }
+       cout << "\n";
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.39 Write a for loop to print the pattern of a right triangle using numbers.
+#include <bits/stdc++.h>
+using namespace std;
+ int rows;
+
+    int rows;
+
+   cout << "Enter the number of rows for the right triangle: ";
+  cin >> rows;
+
+    for (int i = 1; i <= rows; i++) 
+    {
+        for (int j = 1; j <= i; ++j)
+        {
+            cout << j << " ";
+        }
+           cout <<"\n";
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.40 Create a for loop to generate a list of Fibonacci numbers up to 20 terms.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int> fibonacci_sequence;
+    fibonacci_sequence.push_back(0); 
+    fibonacci_sequence.push_back(1); 
+
+    for (int i = 2; i < 20; i++) 
+    {
+        int next_fibonacci = fibonacci_sequence[i - 1] + fibonacci_sequence[i - 2];
+        fibonacci_sequence.push_back(next_fibonacci);
+    }
+
+   
+    cout << "Fibonacci Sequence (up to 20 terms): ";
+    for (int num : fibonacci_sequence) {
+        cout << num << " ";
+    }
+    cout <<"\n";
+
+    return 0;
+}
+................................................................................................................................................
+//Q.41 Write a for loop to find the sum of all even numbers between 1 and 50.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+     int sum = 0;
+
+    for (int i = 1; i <= 50; i++) 
+    {
+        if (i % 2 == 0)
+        {
+        
+            sum=sum+i;
+        }
+    }
+
+    cout << "Sum of even numbers between 1 and 50: " << sum <<"\n";
+
+    return 0;
+}
+................................................................................................................................................
+
