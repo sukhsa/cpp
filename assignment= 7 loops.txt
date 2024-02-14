@@ -624,4 +624,300 @@ int main()
     return 0;
 }
 ................................................................................................................................................
+//Q.42 reate a for loop to print the pattern of a pyramid using asterisks.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int rows;
+
+    cout << "Enter the number of rows for the pyramid: ";
+    cin >> rows;
+
+    for (int i = 1; i <= rows; ++i)
+    {
+     
+        for (int j = 1; j <= rows - i; ++j)
+        {
+            std::cout << " ";
+        }
+
+        for (int k = 1; k <= 2 * i - 1; ++k)
+        {
+             cout << "*";
+        }
+
+        cout <<"\n";
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.43 Write a for loop to print the pattern of a right triangle using alphabets.
+#include <iostream>
+
+int main()
+{
+   int rows;
+    char alphabet = 'A';
+
+    cout << "Enter the number of rows for the right triangle: ";
+    cin >> rows;
+
+    for (int i = 1; i <= rows; i++)
+    {
+        
+        for (int j = 1; j <= i; j++) 
+        {
+            cout << alphabet;
+            ++alphabet;
+        }
+
+         cout << "\n";
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.44 Create a for loop to generate a list of all prime numbers between 50 and 100.
+
+#include <bits/stdc++.h>
+using namespace std;
+bool isPrime(int num) {
+    if (num <= 1)
+        return false;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+int main()
+{
+    vector<int> primeNumbers;
+    for (int i = 50; i <= 100; i++) {
+        if (isPrime(i))
+            primeNumbers.push_back(i);
+    }
+    std::cout << "Prime numbers between 50 and 100 are: ";
+    for (size_t j = 0; j < primeNumbers.size(); ++j) {
+        std::cout << primeNumbers[j];
+        if (j != primeNumbers.size() - 1)
+            cout << ", ";
+    }
+      cout <<"\n";
+    return 0;
+}
+   
+................................................................................................................................................
+//Q.45 Write a for loop to print the pattern of a hollow diamond using asterisks.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter the number of rows (odd number): ";
+    cin >> n;
+
+    if (n % 2 == 0) {
+        cout << "Please enter an odd number." ;
+        return 1;
+    }
+
+    for (int i = 0; i < n / 2 + 1; i++) {
+        for (int j = 0; j < n / 2 - i; j++) {
+            cout << " ";
+        }
+        cout << "*";
+        if (i != 0) {
+            for (int j = 0; j < 2 * i - 1; j++) {
+                cout << " ";
+            }
+            cout << "*";
+        }
+        cout << "/n";
+    }
+
+    for (int i = n / 2 - 1; i >= 0; i--) {
+        for (int j = 0; j < n / 2 - i; j++) {
+            cout << " ";
+        }
+        cout << "*";
+        if (i != 0) {
+            for (int j = 0; j < 2 * i - 1; j++) {
+                cout << " ";
+            }
+            cout << "*";
+        }
+        cout <<"\n";
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.52 Create a for loop to print the pattern of a hollow square using numbers.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int rows;
+    cout << "Enter the number of rows: ";
+    cin >> rows;
+
+    for (int j = 1; j <= rows; j++) 
+    {
+        cout << j << " ";
+    }
+    cout << "\n";
+
+    for (int i = 2; i <= rows - 1; i++)
+    {
+        cout << i << " ";
+        
+        for (int j = 2; j <= rows - 1; j++) 
+        {
+            cout << "  ";
+        }
+        cout << i <<"\n";
+    }
+
+    if (rows > 1) {
+        for (int j = 1; j <= rows; j++) 
+        {
+            cout << j << " ";
+        }
+        cout <<"\n";
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.53 Write a for loop to find the sum of the digits of each number in the Fibonacci series up to 10 terms.
+#include <bits/stdc++.h>
+using namespace std;
+int digitSum(int num)
+{
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+int main()
+{
+    int fib[10];
+    fib[0] = 0;
+    fib[1] = 1;
+
+    cout << "Sum of digits of Fibonacci series up to 10 terms:\n";
+
+    for (int i = 2; i < 10; ++i) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+        cout << "Term " << i + 1 << ": " << digitSum(fib[i]) <<"\n";
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.55 Write a for loop to find the sum of all digits in a given range of numbers.
+#include <bits/stdc++.h>
+using namespace std;
+int digitSum(int num) {
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+int main()
+{
+    int start, end;
+    std::cout << "Enter the start and end of the range: ";
+    std::cin >> start ;
+
+    int totalSum = 0;
+
+    for (int i = start; i <= end; i++) {
+        totalSum += digitSum(i);
+    }
+
+    cout << "The sum of all digits in the range [" << start << ", " << "\n" << "] is: " << totalSum << "\n";
+
+    return 0;
+}
+................................................................................................................................................
+//Q.56 Write a for loop to check if a given number is a palindrome or not.
+#include <bits/stdc++.h>
+using namespace std;
+bool isPalindrome(int num) {
+    int originalNum = num;
+    int reversedNum = 0;
+
+    while (num > 0) {
+        reversedNum = reversedNum * 10 + num % 10;
+        num /= 10;
+    }
+
+    return originalNum == reversedNum;
+}
+int main()
+{
+     int number;
+    cout << "Enter a number to check if it's a palindrome: ";
+    cin >> number;
+
+    if (isPalindrome(number)) {
+        cout << number << " is a palindrome." <<"\n";
+    } else {
+        cout << number << " is not a palindrome." << "\n";
+    }
+
+    return 0;
+}
+................................................................................................................................................
+//Q.60 Create a for loop to generate a list of all Armstrong numbers between 1 and 1000.
+#include <bits/stdc++.h>
+using namespace std;
+int countDigits(int num)
+{
+    int count = 0;
+    while (num != 0) {
+        num /= 10;
+        ++count;
+    }
+    return count;
+}
+
+bool isArmstrong(int num) {
+    int originalNum = num;
+    int digitCount = countDigits(num);
+    int sum = 0;
+
+    while (num != 0) {
+        int digit = num % 10;
+        sum += pow(digit, digitCount);
+        num /= 10;
+    }
+
+    return sum == originalNum;
+}
+
+int main() {
+    cout << "Armstrong numbers between 1 and 1000 are:" << "\n";
+    for (int i = 1; i <= 1000; ++i) {
+        if (isArmstrong(i)) {
+            cout << i << " ";
+        }
+    }
+    cout << "\n";
+    return 0;
+}
+................................................................................................................................................
+
+
 
