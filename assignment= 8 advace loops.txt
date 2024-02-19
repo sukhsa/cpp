@@ -1,0 +1,248 @@
+//Q 1. Write a program to print the first 10 even numbers.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{ 
+    cout<<"the even number is 1 to 10  is ";
+    for(int i=1; i<=10;i+=2)
+    cout<<i <<" ";
+    return 0;
+}
+...........................................................................................................................................
+//Q.2 Create a program to print the multiplication table of a given number.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int number;
+    cout<<"enter the value of number whose multiplication "<<endl;
+    cin>>number;
+    for(int i=1;i<=10;i++)
+    {
+        cout<<number<<"x"<<i<<"="<<number*i<<endl;
+    }
+    return 0;
+}
+...........................................................................................................................................
+//Q.3 Write a program to calculate the factorial of a given number.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int number;
+    int factorial=1;
+    cout<<"enter a number whose calculate factorial\n";
+    cin>>number;
+    for(int i=1; i<=number;i++)
+    {
+         factorial *= i;
+    }
+     cout<<"factorial of a given number is "<<factorial <<endl;
+    return 0;
+}
+...........................................................................................................................................
+//Q.4 Create a program to find whether a given number is prime or not.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int number,flag=1;
+    cout<<"enter the value of number\n";
+    cin>>number;
+    for(int i=2;i<number;i++)
+    {
+        if(number%i==0)
+        {
+            flag=0;
+            break;
+        }
+    }
+    if(flag==1)
+    { 
+        cout<<"number is prime\n";
+        
+    }
+    else
+    {
+        cout<<"number is not prime \n";
+    }
+       
+    return 0;
+}
+................................................................................................................................................
+//Q.5 Write a program to find the sum of digits of a given number.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int number,lastdigit,sum=0;
+    cout<<"enter ther value of number \n";
+    cin>>number;
+    cout<<"number is "<<number <<endl;
+    while(number!=0)
+    {
+       lastdigit=number%10;
+       sum=sum+lastdigit;
+      number=number/10;
+        
+    }
+    cout<<"sum of digit is "<<sum <<endl;
+       
+    return 0;
+}
+................................................................................................................................................
+//Q.6 Create a program to print the Fibonacci series up to a certain limit.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int a=0,b=1,c,n;
+   cout<<"enter the value of  n \n";
+   cin>>n;
+   cout<<"Fibonacci series upto "<<n <<endl;
+   cout<<a <<" " <<b<<" ";
+   for(int i=2;i<=n;i++)
+   {
+       c=a+b;
+       cout<<c<<" ";
+       a=b;
+       b=c;
+   }
+  
+    return 0;
+}
+................................................................................................................................................
+//Q.7 Write a program to find the reverse of a given number.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int digitCount(int num)
+{
+    int digitcount=0;
+     do{
+        num/=10;
+        digitcount++;
+    }while(num!=0);
+    return digitcount;
+}
+
+void reverse(int num)
+{
+    int sum=0,lastdigit;
+    int original_digits = digitCount(num);
+    while(num!=0)
+    {
+        lastdigit=num%10;
+        sum=sum*10+lastdigit;
+        num=num/10;
+    }
+    int ending_digits=digitCount(sum);
+    int remaining_digits= original_digits - ending_digits;
+    if(remaining_digits!=0)
+    {
+        for(int i=0;i<remaining_digits;i++)
+        {
+            cout<<"0";
+        }
+    }
+    cout<<sum;
+   
+}
+int main()
+{
+    int num,r;
+    cout<<"Enter the number you want to get reverse\n";
+    cin>>num;
+    reverse(num);
+}
+................................................................................................................................................
+//Q.8 Create a program to find the sum of all natural numbers up to a given limit.
+#include<bits/stdc++.h>
+using namespace std;
+int sumOfNaturalNumbers(int limit)
+{
+    int sum = 0;
+    for (int i = 1; i <= limit; i++) 
+    {
+        sum += i;
+    }
+    return sum;
+}
+
+int main() 
+{
+    int limit;
+    cout << "Enter the limit: ";
+    cin >> limit;
+
+    int result = sumOfNaturalNumbers(limit);
+    cout << "The sum of all natural numbers up to " << limit << " is: " << result << endl;
+
+    return 0;
+}
+................................................................................................................................................
+//Q.9  Write a program to find the GCD (Greatest Common Divisor) of two given numbers.
+
+#include<bits/stdc++.h>
+using namespace std;
+int Gcd(int a, int b)
+{
+    int temp;
+    while(b!=0)
+    {
+        temp = b;
+        b=a%b;
+        a = temp;
+    }
+    return a;
+}
+int main()
+{
+    int a,b,g;
+    cout<<"Enter the value of a and b:\n";
+    cin>>a>>b;
+    g = Gcd(a,b);
+    cout<<"GCD of : "<<a <<" and "<< b<<" is "<<g<<"\n";
+}
+................................................................................................................................................
+//Q.10 Create a program to find the LCM (Least Common Multiple) of two given numbers.
+#include<bits/stdc++.h>
+using namespace std;
+int Gcd(int a, int b)
+{
+    int temp;
+    while(b!=0)
+    {
+        temp = b;
+        b=a%b;
+        a = temp;
+    }
+    return a;
+}
+int lcm(int a,int b)
+{
+    return (a*b)/Gcd(a,b);
+}
+int main()
+{
+    int a,b,g,l;
+    cout<<"Enter the value of a and b:\n";
+    cin>>a>>b;
+    g = Gcd(a,b);
+    cout<<"GCD of : "<<a <<" and "<< b<<" is "<<g<<"\n";
+    l=lcm(a,b);
+    cout<<"LCM of : "<<a <<" and "<< b<<" is "<<l<<"\n";
+}
+................................................................................................................................................
