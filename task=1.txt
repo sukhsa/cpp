@@ -1,0 +1,72 @@
+//n*n*n
+#include <bits/stdc++.h>
+using namespace std;
+void square (int n)
+{
+    if(n<1)
+    return;
+    square(n-1);
+     cout<<n*n*n<<" ";
+}
+     
+int main()
+{
+    int n;
+    cout<<"enter the valuf of n";
+    cin>>n;
+    square(n);
+}
+.......................................................................................................
+//factorial 
+#include <bits/stdc++.h>
+using namespace std;
+int factorial(int n)
+{
+  if (n == 0 || n == 1)
+    return 1;
+  return factorial(n - 1)*n;
+}
+
+int main() {
+  int num,fact;
+  cout<<"enter the value of num";
+  cin>>num;
+  fact = factorial(num); 
+  cout << "Factorial of " << num << " is: " << fact; 
+
+  return 0;
+}
+..........................................................................................................
+//armstrong or not
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+       int number, originalNumber, remainder, result = 0, numDigits = 0;
+
+       cout << "Enter a number: ";
+       cin >> number;
+
+    originalNumber = number;
+
+    int temp = number;
+    while (temp != 0) {
+        temp /= 10;
+        numDigits++;
+    }
+
+    while (originalNumber != 0) {
+        remainder = originalNumber % 10;
+        result += pow(remainder, numDigits);
+        originalNumber /= 10;
+    }
+
+    
+    if (result == number) {
+        cout << number << " is an Armstrong number.\n";
+    } else {
+        cout << number << " is not an Armstrong number.\n";
+    }
+
+    return 0;
+}
